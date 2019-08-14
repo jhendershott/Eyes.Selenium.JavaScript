@@ -124,69 +124,69 @@ export declare class Eyes extends EyesBase {
     check(name: string, target: Target): Promise<void>;
     /**
      * Takes a snapshot of the application under test and matches it with the expected output.
-     * @param [tag=] An optional tag to be associated with the snapshot.
+     * @param [tag=] A required tag to be associated with the snapshot.
      * @param [matchTimeout=-1] The amount of time to retry matching (Milliseconds).
      * @return A promise which is resolved when the validation is finished.
      */
-    checkWindow(tag?: string, matchTimeout?: number): Promise<void>;
+    checkWindow(tag: string, matchTimeout?: number): Promise<void>;
     /**
      * Matches the frame given as parameter, by switching into the frame and using stitching to get an image of the frame.
      * @param element The element which is the frame to switch to. (as would be used in a call to driver.switchTo().frame()).
      * @param [matchTimeout=-1] The amount of time to retry matching (milliseconds).
-     * @param [tag=] An optional tag to be associated with the match.
+     * @param [tag] A tag to be associated with the match.
      * @return A promise which is resolved when the validation is finished.
      */
-    checkFrame(element: EyesRemoteWebElement, matchTimeout?: number, tag?: string): Promise<void>;
+    checkFrame(element: EyesRemoteWebElement, tag: string, matchTimeout?: number): Promise<void>;
     /**
      * Takes a snapshot of the application under test and matches a specific element with the expected region output.
      * @param element The element to check.
      * @param [matchTimeout=-1] The amount of time to retry matching (milliseconds).
-     * @param [tag=] An optional tag to be associated with the match.
+     * @param [tag] A tag to be associated with the match.
      * @return A promise which is resolved when the validation is finished.
      */
-    checkElement(element: WebElement|EyesRemoteWebElement, matchTimeout?: number, tag?: string): Promise<void>;
+    checkElement(element: WebElement|EyesRemoteWebElement, tag: string, matchTimeout?: number): Promise<void>;
     /**
      * Takes a snapshot of the application under test and matches a specific element with the expected region output.
      * @param locator The element to check.
      * @param [matchTimeout=-1] The amount of time to retry matching (milliseconds).
-     * @param [tag=] An optional tag to be associated with the match.
+     * @param [tag=] A tag to be associated with the match.
      * @return A promise which is resolved when the validation is finished.
      */
-    checkElementBy(locator: By, matchTimeout?: number, tag?: string): Promise<void>;
+    checkElementBy(locator: By, tag: string, matchTimeout?: number): Promise<void>;
     /**
      * Visually validates a region in the screenshot.
      * @param region The region to validate (in screenshot coordinates).
-     * @param [tag=] An optional tag to be associated with the screenshot.
+     * @param [tag=] A tag to be associated with the screenshot.
      * @param [matchTimeout=-1] The amount of time to retry matching.
      * @return A promise which is resolved when the validation is finished.
      */
-    checkRegion(region: Region, matchTimeout?: number, tag?: string): Promise<void>;
+    checkRegion(region: Region, tag: string, matchTimeout?: number): Promise<void>;
     /**
      * Visually validates a region in the screenshot.
      * @param element The element defining the region to validate.
-     * @param [tag=] An optional tag to be associated with the screenshot.
+     * @param [tag=] A tag to be associated with the screenshot.
      * @param [matchTimeout=-1] The amount of time to retry matching.
      * @return A promise which is resolved when the validation is finished.
      */
-    checkRegionByElement(element: WebElement|EyesRemoteWebElement, tag?: string, matchTimeout?: number): Promise<void>;
+    checkRegionByElement(element: WebElement|EyesRemoteWebElement, tag: string, matchTimeout?: number): Promise<void>;
     /**
      * Visually validates a region in the screenshot.
      * @param by The WebDriver selector used for finding the region to validate.
-     * @param [tag=] An optional tag to be associated with the screenshot.
+     * @param [tag=] A tag to be associated with the screenshot.
      * @param [matchTimeout=-1] The amount of time to retry matching.
      * @return A promise which is resolved when the validation is finished.
      */
-    checkRegionBy(by: By, tag?: string, matchTimeout?: number): Promise<void>;
+    checkRegionBy(by: By, tag: string, matchTimeout?: number): Promise<void>;
     /**
      * Switches into the given frame, takes a snapshot of the application under test and matches a region specified by the given selector.
      * @param frameNameOrId The name or id of the frame to switch to. (as would be used in a call to driver.switchTo().frame()).
      * @param locator A Selector specifying the region to check.
      * @param [matchTimeout=-1] The amount of time to retry matching (Milliseconds).
-     * @param [tag=] An optional tag to be associated with the snapshot.
+     * @param [tag=] A tag to be associated with the snapshot.
      * @param [stitchContent=true] If {@code true}, stitch the internal content of the region (i.e., perform {@link #checkElement(By, number, String)} on the region.
      * @return A promise which is resolved when the validation is finished.
      */
-    checkRegionInFrame(frameNameOrId: string, locator: By, matchTimeout?: number, tag?: string, stitchContent?: boolean): Promise<void>;
+    checkRegionInFrame(frameNameOrId: string, locator: By, tag?: string, matchTimeout?: number, stitchContent?: boolean): Promise<void>;
     /**
      * Get an updated screenshot.
      * @return The image of the new screenshot.
